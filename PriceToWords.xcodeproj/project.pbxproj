@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		135B0555238D1A63004089C7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135B0554238D1A63004089C7 /* main.swift */; };
+		28528C13238DBDE9000631C3 /* PriceEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28528C12238DBDE9000631C3 /* PriceEnums.swift */; };
+		28528C15238DBE66000631C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28528C14238DBE66000631C3 /* Constants.swift */; };
+		28528C17238DBE79000631C3 /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28528C16238DBE79000631C3 /* Solution.swift */; };
+		28528C1F238DC293000631C3 /* PriceToWordsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28528C1E238DC293000631C3 /* PriceToWordsTest.swift */; };
+		28528C29238DC934000631C3 /* PriceEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28528C12238DBDE9000631C3 /* PriceEnums.swift */; };
+		28528C2A238DC934000631C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28528C14238DBE66000631C3 /* Constants.swift */; };
+		28528C2B238DC934000631C3 /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28528C16238DBE79000631C3 /* Solution.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +32,23 @@
 /* Begin PBXFileReference section */
 		135B0551238D1A63004089C7 /* PriceToWords */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PriceToWords; sourceTree = BUILT_PRODUCTS_DIR; };
 		135B0554238D1A63004089C7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		28528C12238DBDE9000631C3 /* PriceEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceEnums.swift; sourceTree = "<group>"; };
+		28528C14238DBE66000631C3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		28528C16238DBE79000631C3 /* Solution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
+		28528C1C238DC293000631C3 /* PriceToWordsTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PriceToWordsTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		28528C1E238DC293000631C3 /* PriceToWordsTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceToWordsTest.swift; sourceTree = "<group>"; };
+		28528C20238DC293000631C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		135B054E238D1A63004089C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28528C19238DC293000631C3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				135B0553238D1A63004089C7 /* PriceToWords */,
+				28528C1D238DC293000631C3 /* PriceToWordsTest */,
 				135B0552238D1A63004089C7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				135B0551238D1A63004089C7 /* PriceToWords */,
+				28528C1C238DC293000631C3 /* PriceToWordsTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,8 +80,20 @@
 			isa = PBXGroup;
 			children = (
 				135B0554238D1A63004089C7 /* main.swift */,
+				28528C12238DBDE9000631C3 /* PriceEnums.swift */,
+				28528C14238DBE66000631C3 /* Constants.swift */,
+				28528C16238DBE79000631C3 /* Solution.swift */,
 			);
 			path = PriceToWords;
+			sourceTree = "<group>";
+		};
+		28528C1D238DC293000631C3 /* PriceToWordsTest */ = {
+			isa = PBXGroup;
+			children = (
+				28528C1E238DC293000631C3 /* PriceToWordsTest.swift */,
+				28528C20238DC293000631C3 /* Info.plist */,
+			);
+			path = PriceToWordsTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +116,23 @@
 			productReference = 135B0551238D1A63004089C7 /* PriceToWords */;
 			productType = "com.apple.product-type.tool";
 		};
+		28528C1B238DC293000631C3 /* PriceToWordsTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 28528C21238DC293000631C3 /* Build configuration list for PBXNativeTarget "PriceToWordsTest" */;
+			buildPhases = (
+				28528C18238DC293000631C3 /* Sources */,
+				28528C19238DC293000631C3 /* Frameworks */,
+				28528C1A238DC293000631C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PriceToWordsTest;
+			productName = PriceToWordsTest;
+			productReference = 28528C1C238DC293000631C3 /* PriceToWordsTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -93,6 +144,9 @@
 				ORGANIZATIONNAME = Pavel;
 				TargetAttributes = {
 					135B0550238D1A63004089C7 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					28528C1B238DC293000631C3 = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
 				};
@@ -111,16 +165,41 @@
 			projectRoot = "";
 			targets = (
 				135B0550238D1A63004089C7 /* PriceToWords */,
+				28528C1B238DC293000631C3 /* PriceToWordsTest */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		28528C1A238DC293000631C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		135B054D238D1A63004089C7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28528C13238DBDE9000631C3 /* PriceEnums.swift in Sources */,
 				135B0555238D1A63004089C7 /* main.swift in Sources */,
+				28528C17238DBE79000631C3 /* Solution.swift in Sources */,
+				28528C15238DBE66000631C3 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		28528C18238DC293000631C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28528C29238DC934000631C3 /* PriceEnums.swift in Sources */,
+				28528C1F238DC293000631C3 /* PriceToWordsTest.swift in Sources */,
+				28528C2B238DC934000631C3 /* Solution.swift in Sources */,
+				28528C2A238DC934000631C3 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,10 +322,11 @@
 		135B0559238D1A63004089C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NXD7C56LEN;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -254,10 +334,49 @@
 		135B055A238D1A63004089C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = NXD7C56LEN;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		28528C22238DC293000631C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = PriceToWordsTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tesss.PriceToWordsTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		28528C23238DC293000631C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = PriceToWordsTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = tesss.PriceToWordsTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -279,6 +398,15 @@
 			buildConfigurations = (
 				135B0559238D1A63004089C7 /* Debug */,
 				135B055A238D1A63004089C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		28528C21238DC293000631C3 /* Build configuration list for PBXNativeTarget "PriceToWordsTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28528C22238DC293000631C3 /* Debug */,
+				28528C23238DC293000631C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
