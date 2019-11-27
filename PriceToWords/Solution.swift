@@ -23,18 +23,28 @@ func priceToWords(_ value: Double) -> String {
     return "\(toWords(dollars, unit: .dollar)) \(andWord.uppercased()) \(toWords(cents, unit: .cent))"
 }
 
+/// Round Double to 2 decimal signs
+/// - Parameter value: input amount
 private func roundedDouble(_ value: Double) -> Double {
     round(value * 100) / 100
 }
 
+/// Round decimal
+/// - Parameter value: input value
 private func centsInInt(_ value: Double) -> Int {
     Int(round(value * 100)) % 100
 }
 
+/// getting Int value of double
+/// - Parameter value: input amount
 private func dollarsInInt(_ value: Double) -> Int {
     Int(value)
 }
 
+/// Creating words about the value
+/// - Parameters:
+///   - value: input amount
+///   - unit: measurement to apply correct word
 private func toWords(_ value: Int, unit: MeasurementUnit) -> String {
     var values = [String]()
     var val = value
@@ -47,6 +57,8 @@ private func toWords(_ value: Int, unit: MeasurementUnit) -> String {
     return (values.isEmpty ? "\(WordNumber.zero)" : values.reversed().joined(separator: ", ")) + spaceSign + unit.valueString(value)
 }
 
+/// getting one three digit and creating words accorgingly
+/// - Parameter value: input value (< 1000)
 private func threeDigitsToWords(_ value: Int) -> String? {
     guard value > 0 else { return nil }
     return [oneDigitToWord(value / 100), getTwoIntsWords(value % 100)]
@@ -54,11 +66,15 @@ private func threeDigitsToWords(_ value: Int) -> String? {
         .joined(separator: spaceSign + andWord + spaceSign)
 }
 
+/// Third sign from the right - hundren
+/// - Parameter digit: input digit (< 10)
 private func oneDigitToWord(_ digit: Int) -> String? {
     guard digit > 0 else { return nil }
     return "\(WordNumber(rawValue: digit)!) \(NumberPart.hundred.rawValue)"
 }
 
+/// First and second sign from the right
+/// - Parameter twoDigits: input digits (< 100)
 private func getTwoIntsWords(_ twoDigits: Int) -> String? {
     guard twoDigits > 0 else { return nil }
     if let second = WordNumber(rawValue: twoDigits) {

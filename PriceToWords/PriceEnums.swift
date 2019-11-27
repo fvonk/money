@@ -9,7 +9,6 @@
 import Foundation
 
 
-/// Number from 
 enum WordNumber: Int, CaseIterable {
     case zero
     case one, two, three, four, five, six, seven, eight, nine
@@ -28,6 +27,8 @@ enum MeasurementUnit: String {
     case dollar
     case cent
     
+    /// Plural description / adding suffix 'S'
+    /// - Parameter value: amount
     func valueString(_ value: Int) -> String {
         rawValue.uppercased() + (value == 1 ? "": "S")
     }
