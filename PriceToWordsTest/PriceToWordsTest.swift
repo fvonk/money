@@ -97,7 +97,35 @@ class PriceToWordsTest: XCTestCase {
     
     func testRoundToOneDollar() {
         let result = priceToWords(0.999999)
-        let expected = "zero \(MeasurementUnit.dollar.rawValue.uppercased())S \(andWord.uppercased()) ninety nine \(MeasurementUnit.cent.rawValue.uppercased())S"
+        let expected = "one \(MeasurementUnit.dollar.rawValue.uppercased()) \(andWord.uppercased()) zero \(MeasurementUnit.cent.rawValue.uppercased())S"
+        print("  result: \(result)\nexpected: \(expected)")
+        XCTAssert(result == expected)
+    }
+    
+    func testRoundCents() {
+        let result = priceToWords(1234.1)
+        let expected = "one thousand, two hundred and thirty four \(MeasurementUnit.dollar.rawValue.uppercased())S \(andWord.uppercased()) ten \(MeasurementUnit.cent.rawValue.uppercased())S"
+        print("  result: \(result)\nexpected: \(expected)")
+        XCTAssert(result == expected)
+    }
+    
+    func testRoundCentsCase() {
+        let result = priceToWords(1234.6)
+        let expected = "one thousand, two hundred and thirty four \(MeasurementUnit.dollar.rawValue.uppercased())S \(andWord.uppercased()) sixty \(MeasurementUnit.cent.rawValue.uppercased())S"
+        print("  result: \(result)\nexpected: \(expected)")
+        XCTAssert(result == expected)
+    }
+    
+    func testRoundCentsCase2() {
+        let result = priceToWords(1234.599999)
+        let expected = "one thousand, two hundred and thirty four \(MeasurementUnit.dollar.rawValue.uppercased())S \(andWord.uppercased()) sixty \(MeasurementUnit.cent.rawValue.uppercased())S"
+        print("  result: \(result)\nexpected: \(expected)")
+        XCTAssert(result == expected)
+    }
+    
+    func testRoundCentsCase3() {
+        let result = priceToWords(1234.594)
+        let expected = "one thousand, two hundred and thirty four \(MeasurementUnit.dollar.rawValue.uppercased())S \(andWord.uppercased()) fifty nine \(MeasurementUnit.cent.rawValue.uppercased())S"
         print("  result: \(result)\nexpected: \(expected)")
         XCTAssert(result == expected)
     }

@@ -19,16 +19,16 @@ func priceToWords(_ value: Double) -> String {
     let price = roundedDouble(value)
     let cents = centsInInt(price)
     let dollars = dollarsInInt(price)
-    
+
     return "\(toWords(dollars, unit: .dollar)) \(andWord.uppercased()) \(toWords(cents, unit: .cent))"
 }
 
 private func roundedDouble(_ value: Double) -> Double {
-    floor(value * 100) / 100
+    round(value * 100) / 100
 }
 
 private func centsInInt(_ value: Double) -> Int {
-    Int(value * 100) % 100
+    Int(round(value * 100)) % 100
 }
 
 private func dollarsInInt(_ value: Double) -> Int {
