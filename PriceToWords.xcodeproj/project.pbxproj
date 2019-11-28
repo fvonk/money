@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		135B0555238D1A63004089C7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135B0554238D1A63004089C7 /* main.swift */; };
+		13FD4BCD238FCEBE00EE8A33 /* Foundation.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 13FD4B9C238FC99000EE8A33 /* Foundation.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		28528C13238DBDE9000631C3 /* PriceEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28528C12238DBDE9000631C3 /* PriceEnums.swift */; };
 		28528C15238DBE66000631C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28528C14238DBE66000631C3 /* Constants.swift */; };
 		28528C17238DBE79000631C3 /* Solution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28528C16238DBE79000631C3 /* Solution.swift */; };
@@ -18,20 +19,22 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		135B054F238D1A63004089C7 /* CopyFiles */ = {
+		13FD4BCC238FCEB400EE8A33 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			dstPath = "";
+			dstSubfolderSpec = 10;
 			files = (
+				13FD4BCD238FCEBE00EE8A33 /* Foundation.framework in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		135B0551238D1A63004089C7 /* PriceToWords */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PriceToWords; sourceTree = BUILT_PRODUCTS_DIR; };
 		135B0554238D1A63004089C7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		13FD4B9C238FC99000EE8A33 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		28528C12238DBDE9000631C3 /* PriceEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceEnums.swift; sourceTree = "<group>"; };
 		28528C14238DBE66000631C3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		28528C16238DBE79000631C3 /* Solution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solution.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 				135B0553238D1A63004089C7 /* PriceToWords */,
 				28528C1D238DC293000631C3 /* PriceToWordsTest */,
 				135B0552238D1A63004089C7 /* Products */,
+				13FD4B9B238FC98F00EE8A33 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +91,14 @@
 			path = PriceToWords;
 			sourceTree = "<group>";
 		};
+		13FD4B9B238FC98F00EE8A33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13FD4B9C238FC99000EE8A33 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		28528C1D238DC293000631C3 /* PriceToWordsTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,7 +117,7 @@
 			buildPhases = (
 				135B054D238D1A63004089C7 /* Sources */,
 				135B054E238D1A63004089C7 /* Frameworks */,
-				135B054F238D1A63004089C7 /* CopyFiles */,
+				13FD4BCC238FCEB400EE8A33 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -322,9 +334,14 @@
 		135B0559238D1A63004089C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NXD7C56LEN;
 				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/PriceToWordsTest/Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pricetowords.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -334,9 +351,14 @@
 		135B055A238D1A63004089C7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NXD7C56LEN;
 				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/PriceToWordsTest/Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pricetowords.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
