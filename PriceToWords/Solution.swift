@@ -10,35 +10,60 @@ import Foundation
 
 
 /// Main Solution Function
-/// - Parameter value: Double value to convert into English words
+/// - Parameter value: input price in string
 /// - Returns: A single, concatenated string.
-func priceToWords(_ value: Double) -> String {
-    guard value >= 0 else { return "amount can not be negative" }
-    guard value < maximumValue else { return "amount exceeds 2 billions" }
+func priceToWords(_ value: String) -> String {
+    do {
+        let price = try validateInput(value)
+        return "\(toWords(price.dollars, unit: .dollar)) \(andWord.uppercased()) \(toWords(price.cents, unit: .cent))"
+    } catch {
+        return (error as? ValidationError)?.rawValue ?? error.localizedDescription
+    }
+}
+
+/// check input
+/// - Parameter value: input price in string
+/// - Returns: Price type if input correct
+private func validateInput(_ value: String) throws -> Price {
+    let parts = value.split(separator: ".") //check if price has dot
+    var dollars: Int = 0
+    var cents: Int = 0
     
-    let price = roundedDouble(value)
-    let cents = centsInInt(price)
-    let dollars = dollarsInInt(price)
-
-    return "\(toWords(dollars, unit: .dollar)) \(andWord.uppercased()) \(toWords(cents, unit: .cent))"
+    switch parts.count {
+    case 1: // only one part - dollars or cents
+        if value.hasPrefix(".") {
+            cents = try validate(cents: try convertToInt(String(parts[0])), value: String(parts[0]))
+        } else {
+            dollars = try convertToInt(String(parts[0]))
+        }
+    case 2: // two parts - dollars and cents
+        dollars = try convertToInt(String(parts[0]))
+        cents = try validate(cents: try convertToInt(String(parts[1])), value: String(parts[1]))
+    default:
+        throw ValidationError.wrongFormat
+    }
+    
+    guard dollars >= 0 else { throw ValidationError.negative }
+    guard dollars <= maximumValue else { throw ValidationError.tooLarge }
+    return Price(dollars, cents)
 }
 
-/// Round Double to 2 decimal signs
-/// - Parameter value: input amount
-private func roundedDouble(_ value: Double) -> Double {
-    round(value * 100) / 100
+/// Validate cents
+/// - Parameters:
+///   - cents: cents Int after cast Int from String
+///   - value: cents from raw string
+/// - Returns: corrected cents in Int
+private func validate(cents: Int, value: String) throws -> Int {
+    guard cents < 100 else { throw ValidationError.moreThan2Decimals }
+    return cents * (value.count == 1 ? 10: 1)//0.1 is 10 cents => increase 10 times
 }
 
-/// Round decimal
-/// - Parameter value: input value
-private func centsInInt(_ value: Double) -> Int {
-    Int(round(value * 100)) % 100
-}
-
-/// getting Int value of double
-/// - Parameter value: input amount
-private func dollarsInInt(_ value: Double) -> Int {
-    Int(value)
+/// Converting String to Int if can
+/// - Parameter value: input string
+/// - Returns: Int and throws error if can't parse
+private func convertToInt(_ value: String) throws -> Int {
+    guard let dollarsValue = Int(value) else { throw ValidationError.wrongFormat }
+    return dollarsValue
 }
 
 /// Creating words about the value

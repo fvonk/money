@@ -10,5 +10,6 @@ import Foundation
 
 let spaceSign = " "
 let andWord = "and"
+let maxDecimals = 2
 let thousandStep: Int = 1000
-let maximumValue: Double = pow(2, 31)
+let maximumValue: Int = 2_000_000_000

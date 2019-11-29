@@ -8,6 +8,14 @@
 
 import Foundation
 
+typealias Price = (dollars: Int, cents: Int)
+
+enum ValidationError: String, Error {
+    case negative
+    case tooLarge
+    case wrongFormat
+    case moreThan2Decimals
+}
 
 enum WordNumber: Int, CaseIterable {
     case zero
@@ -30,6 +38,6 @@ enum MeasurementUnit: String {
     /// Plural description / adding suffix 'S'
     /// - Parameter value: amount
     func valueString(_ value: Int) -> String {
-        rawValue.uppercased() + (value == 1 ? "": "S")
+        return rawValue.uppercased() + (value == 1 ? "": "S")
     }
 }

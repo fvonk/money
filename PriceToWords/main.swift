@@ -12,10 +12,8 @@ print("enter value (type \"q\" and press \"Enter\" for quit):")
 while let arr = readLine() {
     if arr == "q" {
         exit(0)
-    } else if let value = Double(arr) {
-        print(priceToWords(value))
     } else {
-        print("wrong input")
+        print(priceToWords(arr))
     }
     print("Enter new value if you want:")
 }
