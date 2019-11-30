@@ -97,6 +97,13 @@ class PriceToWordsTest: XCTestCase {
     }
     
     //    MARK: - MORE THAN 2 DECIMALS
+    func testZeroDecimals() {
+        let result = priceToWords("1.001")
+        let expected = ValidationError.moreThan2Decimals.rawValue
+        print("  result: \(result)\nexpected: \(expected)")
+        XCTAssert(result == expected)
+    }
+    
     func testEdgeZeroCents() {
         let result = priceToWords("100.009999999")
         let expected = ValidationError.moreThan2Decimals.rawValue
@@ -157,6 +164,13 @@ class PriceToWordsTest: XCTestCase {
     
     func testPlusSignes() {
         let result = priceToWords("++1234.59")
+        let expected = ValidationError.wrongFormat.rawValue
+        print("  result: \(result)\nexpected: \(expected)")
+        XCTAssert(result == expected)
+    }
+    
+    func testDots() {
+        let result = priceToWords("1..0")
         let expected = ValidationError.wrongFormat.rawValue
         print("  result: \(result)\nexpected: \(expected)")
         XCTAssert(result == expected)

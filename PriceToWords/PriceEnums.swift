@@ -35,7 +35,7 @@ enum MeasurementUnit: String {
     case dollar
     case cent
     
-    /// Plural description / adding suffix 'S'
+    /// Plural description / adding suffix 'S' if value does not equals 1
     /// - Parameter value: amount
     func valueString(_ value: Int) -> String {
         return rawValue.uppercased() + (value == 1 ? "": "S")

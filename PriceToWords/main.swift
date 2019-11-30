@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Start program
 print("enter value (type \"q\" and press \"Enter\" for quit):")
 while let arr = readLine() {
     if arr == "q" {

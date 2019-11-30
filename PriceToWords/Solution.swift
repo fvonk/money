@@ -25,6 +25,7 @@ func priceToWords(_ value: String) -> String {
 /// - Parameter value: input price in string
 /// - Returns: Price type if input correct
 private func validateInput(_ value: String) throws -> Price {
+    guard (value.filter{ $0 == "." }).count <= 1 else { throw ValidationError.wrongFormat }
     let parts = value.split(separator: ".") //check if price has dot
     var dollars: Int = 0
     var cents: Int = 0
@@ -54,7 +55,7 @@ private func validateInput(_ value: String) throws -> Price {
 ///   - value: cents from raw string
 /// - Returns: corrected cents in Int
 private func validate(cents: Int, value: String) throws -> Int {
-    guard cents < 100 else { throw ValidationError.moreThan2Decimals }
+    guard value.count <= maxDecimals else { throw ValidationError.moreThan2Decimals }
     return cents * (value.count == 1 ? 10: 1)//0.1 is 10 cents => increase 10 times
 }
 
